@@ -1,0 +1,16 @@
+.NavbarWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5% 1rem 2rem;
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 24px;
+  font-weight: 500;
+  .Logo {
+    height: 60px;
+    width: 178px;
+  }
+}

@@ -1,0 +1,18 @@
+GET http://localhost:3000/user/12
+###
+GET http://localhost:3000/user/18
+
+###
+GET http://localhost:3000/user/12/activity
+###
+GET http://localhost:3000/user/18/activity
+
+###
+GET http://localhost:3000/user/12/average-sessions
+###
+GET http://localhost:3000/user/18/average-sessions
+
+###
+GET http://localhost:3000/user/12/performance
+###
+GET http://localhost:3000/user/18/performance
