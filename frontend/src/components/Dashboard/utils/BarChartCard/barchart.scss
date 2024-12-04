@@ -1,0 +1,57 @@
+.BarChartWrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: #FBFBFB;
+  min-height: 320px;
+  max-height: 320px;
+  padding: 1em 1.5em;
+  gap: 2em;
+  border-radius: 10px;
+  flex: 1;
+
+  .BarChartHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .BarChartTitle {
+      font-size: 15px;
+      font-weight: 500;
+      color: #20253A;
+      margin: 0;
+    }
+
+    .BarChartLegend {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5em;
+      color: #74798C;
+      font-size: 14px;
+      font-weight: 500;
+
+      .BarChartLegendItem {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .BarChartContent {
+    min-height: 280px;
+
+    .recharts-responsive-container {
+      width: 100%;
+      min-height: 180px;
+
+      .recharts-yAxis {
+        margin-left: 1em;
+      }
+    }
+  }
+}

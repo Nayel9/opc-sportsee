@@ -1,0 +1,22 @@
+.Dashboard {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  gap: 2em;
+
+  .ChartsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    flex-wrap: wrap;
+    max-width: 838px;
+    width: 100%;
+
+    .ChartCardWrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+      height: 263px;
+      gap: 1em;
+    }
+  }
+}

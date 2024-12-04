@@ -1,7 +1,15 @@
 .MainWrapper {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1440px;
+  overflow: hidden;
+
   .DashboardWrapper {
+    display: flex;
+    flex-direction: column;
     flex: 1;
+    margin: 4em;
+    gap: 4em;
   }
 }

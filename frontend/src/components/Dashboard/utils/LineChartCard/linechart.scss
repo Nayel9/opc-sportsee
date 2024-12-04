@@ -1,0 +1,34 @@
+.LineChartCard {
+  display: flex;
+  height: 263px;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: #FF0000;
+  position: relative;
+
+  .LineChartTitle {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 2em 30% 0 2em;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    position: absolute;
+    flex: auto;
+  }
+
+  .recharts-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .custom-tooltip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    width: 39px;
+    height: 25px;
+    background-color: #FFFFFF;
+    font-size: 10px;
+  }
+}

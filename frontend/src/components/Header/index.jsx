@@ -1,7 +1,8 @@
-import mockedData from '/mockedData.json';
+import {useState, useEffect} from 'react';
+import apiService from '../../services/apiService';
 import styled from 'styled-components';
+import PropTypes from "prop-types";
 
-//********* CSS IN JS STYLE *********//
 const StyledUserName = styled.span`
     font-weight: 500;
     color: #FF0000;
@@ -9,21 +10,32 @@ const StyledUserName = styled.span`
 
 const StyledHeader = styled.h3`
     margin: 0;
-    font-size: 48px;
-    font-weight: 500;
+    font-size: 52px;
+    font-weight: 700;
 `;
 
 const StyledP = styled.p`
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
     color: #000000;
 `;
 
-//********* JS COMPONENT *********//
+function Header({ userId }) {
+    const [userName, setUserName] = useState('');
 
-function Header() {
+    useEffect(() => {
+        apiService.getUserInfosData(userId)
+            .then(data => {
+                setUserName(data.firstName);
+            })
+            .catch(error => {
+                console.error("Erreur lors de la récupération des données:", error);
+            });
+    }, [userId]);
 
-    const {firstName: userName} = mockedData.user.userInfos;
+    Header.propTypes = {
+        userId: PropTypes.number.isRequired,
+    }
 
     return (
         <div className="Header">
