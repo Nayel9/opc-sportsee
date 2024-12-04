@@ -1,4 +1,32 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Dashboard/utils/LineChartCard/index.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Dashboard/utils/LineChartCard/index.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * Composant de la carte de graphique en ligne.
  *
  * Ce composant affiche un graphique en ligne représentant la durée moyenne des sessions de l'utilisateur.
@@ -23,11 +51,11 @@ import './linechart.scss';
  * @returns {JSX.Element|null} Le composant du tooltip personnalisé.
  */
 const CustomTooltip = ({ active, payload }) => {
-    if (active && payload && payload.length) {
+    if (active &amp;&amp; payload &amp;&amp; payload.length) {
         return (
-            <div className="custom-tooltip">
-                <p className="label">{`${payload[0].value} min`}</p>
-            </div>
+            &lt;div className="custom-tooltip">
+                &lt;p className="label">{`${payload[0].value} min`}&lt;/p>
+            &lt;/div>
         );
     }
     return null;
@@ -81,13 +109,13 @@ function LineChartCard({ userId }) {
     };
 
     return (
-        <div className="LineChartCard" ref={cardRef}>
-            <ResponsiveContainer width="100%" height="100%">
-                <p className="LineChartTitle">
+        &lt;div className="LineChartCard" ref={cardRef}>
+            &lt;ResponsiveContainer width="100%" height="100%">
+                &lt;p className="LineChartTitle">
                     Durée moyenne des sessions
-                </p>
+                &lt;/p>
 
-                <LineChart
+                &lt;LineChart
                     data={sessionData}
                     margin={{ top: 80, right: 20, left: 20, bottom: 40 }}
                     onMouseMove={(e) => {
@@ -97,14 +125,14 @@ function LineChartCard({ userId }) {
                     }}
                     onMouseLeave={() => setActiveIndex(null)}
                 >
-                    <defs>
-                        <linearGradient id="colorGradient" x1="0" y1="0" x2="1" y2="0">
-                            <stop offset="0%" stopColor="#ff6e6e" />
-                            <stop offset="100%" stopColor="#FFFFFF" />
-                        </linearGradient>
-                    </defs>
+                    &lt;defs>
+                        &lt;linearGradient id="colorGradient" x1="0" y1="0" x2="1" y2="0">
+                            &lt;stop offset="0%" stopColor="#ff6e6e" />
+                            &lt;stop offset="100%" stopColor="#FFFFFF" />
+                        &lt;/linearGradient>
+                    &lt;/defs>
 
-                    <XAxis
+                    &lt;XAxis
                         dataKey="day"
                         axisLine={false}
                         tickLine={false}
@@ -116,11 +144,11 @@ function LineChartCard({ userId }) {
                         tickMargin={30}
                     />
 
-                    <YAxis hide={true} />
+                    &lt;YAxis hide={true} />
 
-                    <Tooltip cursor={false} content={<CustomTooltip />} />
+                    &lt;Tooltip cursor={false} content={&lt;CustomTooltip />} />
 
-                    <Line
+                    &lt;Line
                         type="natural"
                         dataKey="duration"
                         stroke="url(#colorGradient)"
@@ -133,10 +161,10 @@ function LineChartCard({ userId }) {
                         }}
                         dot={false}
                     />
-                </LineChart>
+                &lt;/LineChart>
 
-                {activeIndex !== null && cardRef.current ? (
-                    <div
+                {activeIndex !== null &amp;&amp; cardRef.current ? (
+                    &lt;div
                         style={{
                             position: "absolute",
                             top: 0,
@@ -149,9 +177,31 @@ function LineChartCard({ userId }) {
                         }}
                     />
                 ) : null}
-            </ResponsiveContainer>
-        </div>
+            &lt;/ResponsiveContainer>
+        &lt;/div>
     );
 }
 
-export default LineChartCard;
+export default LineChartCard;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-ApiService.html">ApiService</a></li><li><a href="module-BarChartCard.html">BarChartCard</a></li><li><a href="module-Config.html">Config</a></li><li><a href="module-Dashboard.html">Dashboard</a></li><li><a href="module-Header.html">Header</a></li><li><a href="module-LineChartCard.html">LineChartCard</a></li><li><a href="module-MacroNutrimentsCard.html">MacroNutrimentsCard</a></li><li><a href="module-Navbar.html">Navbar</a></li><li><a href="module-Profile.html">Profile</a></li><li><a href="module-RadarChartCard.html">RadarChartCard</a></li><li><a href="module-Router.html">Router</a></li><li><a href="module-Sidebar.html">Sidebar</a></li><li><a href="module-SimpleRadialBarChart.html">SimpleRadialBarChart</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Wed Dec 04 2024 16:44:42 GMT+0100 (heure normale d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

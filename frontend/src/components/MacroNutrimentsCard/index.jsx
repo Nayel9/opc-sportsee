@@ -1,3 +1,11 @@
+/**
+ * Composant de la carte des macronutriments.
+ *
+ * Ce composant affiche une carte avec une icône et une valeur pour un type de macronutriment spécifique.
+ *
+ * @module MacroNutrimentsCard
+ */
+
 import { BsFire } from "react-icons/bs";
 import { TbMeat } from "react-icons/tb";
 import { FaAppleAlt, FaHamburger } from "react-icons/fa";
@@ -18,6 +26,16 @@ const colors = {
     lipides: "#FD5181"
 };
 
+/**
+ * Composant fonctionnel pour la carte des macronutriments.
+ *
+ * @function
+ * @name MacroNutrimentsCard
+ * @param {Object} props - Les propriétés du composant.
+ * @param {string} props.type - Le type de macronutriment (calories, proteines, glucides, lipides).
+ * @param {string} props.value - La valeur du macronutriment.
+ * @returns {JSX.Element} Le composant de la carte des macronutriments.
+ */
 function MacroNutrimentsCard({ type, value }) {
     return (
         <div className="MacroNutrimentsCard">
@@ -38,6 +56,5 @@ MacroNutrimentsCard.propTypes = {
     type: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired
 };
-
 
 export default MacroNutrimentsCard;

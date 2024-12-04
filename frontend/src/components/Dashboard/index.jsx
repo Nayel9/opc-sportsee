@@ -1,14 +1,31 @@
+/**
+ * Composant du tableau de bord.
+ *
+ * Ce composant affiche le tableau de bord de l'utilisateur, incluant différents graphiques et cartes de macronutriments.
+ *
+ * @module Dashboard
+ */
+
 import BarChartCard from "./utils/BarChartCard/index.jsx";
 import './dashboard.scss';
 import MacroNutrimentsCard from "../MacroNutrimentsCard/index.jsx";
 import LineChartCard from "./utils/LineChartCard/index.jsx";
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import apiService from '../../services/apiService';
 import RadarChartCard from "./utils/RadarChartCard/index.jsx";
 import SimpleRadialBarChart from "./utils/RadialBarCard/index.jsx";
 import PropTypes from 'prop-types';
 
-function Dashboard({userId}) {
+/**
+ * Composant fonctionnel pour le tableau de bord.
+ *
+ * @function
+ * @name Dashboard
+ * @param {Object} props - Les propriétés du composant.
+ * @param {number} props.userId - L'ID de l'utilisateur.
+ * @returns {JSX.Element} Le composant du tableau de bord.
+ */
+function Dashboard({ userId }) {
     const [keyData, setKeyData] = useState({});
 
     useEffect(() => {
@@ -28,18 +45,18 @@ function Dashboard({userId}) {
     return (
         <div className="Dashboard">
             <div className="ChartsWrapper">
-                <BarChartCard userId={userId}/>
+                <BarChartCard userId={userId} />
                 <div className="ChartCardWrapper">
-                    <LineChartCard userId={userId}/>
-                    <RadarChartCard userId={userId}/>
-                    <SimpleRadialBarChart userId={userId}/>
+                    <LineChartCard userId={userId} />
+                    <RadarChartCard userId={userId} />
+                    <SimpleRadialBarChart userId={userId} />
                 </div>
             </div>
             <div className="MacroNutrimentsWrapper">
-                <MacroNutrimentsCard type="calories" value={`${keyData.calorieCount}kCal`}/>
-                <MacroNutrimentsCard type="proteines" value={`${keyData.proteinCount}g`}/>
-                <MacroNutrimentsCard type="glucides" value={`${keyData.carbohydrateCount}g`}/>
-                <MacroNutrimentsCard type="lipides" value={`${keyData.lipidCount}g`}/>
+                <MacroNutrimentsCard type="calories" value={`${keyData.calorieCount}kCal`} />
+                <MacroNutrimentsCard type="proteines" value={`${keyData.proteinCount}g`} />
+                <MacroNutrimentsCard type="glucides" value={`${keyData.carbohydrateCount}g`} />
+                <MacroNutrimentsCard type="lipides" value={`${keyData.lipidCount}g`} />
             </div>
         </div>
     );

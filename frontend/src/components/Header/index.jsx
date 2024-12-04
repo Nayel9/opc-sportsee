@@ -1,4 +1,12 @@
-import {useState, useEffect} from 'react';
+/**
+ * Composant de l'en-tête.
+ *
+ * Ce composant affiche un message de bienvenue personnalisé pour l'utilisateur, incluant son prénom et un message de félicitations.
+ *
+ * @module Header
+ */
+
+import { useState, useEffect } from 'react';
 import apiService from '../../services/apiService';
 import styled from 'styled-components';
 import PropTypes from "prop-types";
@@ -20,6 +28,15 @@ const StyledP = styled.p`
     color: #000000;
 `;
 
+/**
+ * Composant fonctionnel pour l'en-tête.
+ *
+ * @function
+ * @name Header
+ * @param {Object} props - Les propriétés du composant.
+ * @param {number} props.userId - L'ID de l'utilisateur.
+ * @returns {JSX.Element} Le composant de l'en-tête.
+ */
 function Header({ userId }) {
     const [userName, setUserName] = useState('');
 

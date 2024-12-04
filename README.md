@@ -13,6 +13,8 @@ SportSee est une application de suivi de la condition physique qui permet aux ut
 - [Fonctionnalités](#fonctionnalités)
 - [Structure du projet](#structure-du-projet)
 - [Utilisation](#utilisation)
+- [Documentation](#documentation)
+    - [Accès local](#accès-local)
 - [Scripts](#scripts)
 - [Technologies utilisées](#technologies-utilisées)
 - [Licence](#licence)
@@ -74,27 +76,70 @@ Voici un aperçu de la structure des fichiers du projet :
 ```
 SportSee/
 ├── backend/
-│   ├── README.md
-│   ├── package.json
-│   └── server.js
+│   ├── .devcontainer/
+│   ├── .idea.old/
+│   └── app/
 ├── frontend/
+│   ├── docs/
 │   ├── public/
-│   │   └── index.html
+│   │   ├── mock/
+│   │   │   ├── activityData.json
+│   │   │   ├── averageSessionData.json
+│   │   │   ├── performanceData.json
+│   │   │   └── userData.json
+│   │   ├── demo.png
+│   │   ├── Group.svg
+│   │   └── vite.svg
 │   ├── src/
+│   │   ├── assets/
+│   │   │    └── logo.png
 │   │   ├── components/
+│   │   │   ├── Dashboard/
+│   │   │   │   ├── index.jsx
+│   │   │   │   ├── dashboard.scss
+│   │   │   │   └── utils/
+│   │   │   │       ├── BarChartCard/
+│   │   │   │       │   ├── index.jsx
+│   │   │   │       │   └── barchart.scss
+│   │   │   │       ├── LineChartCard/
+│   │   │   │       │   ├── index.jsx
+│   │   │   │       │   └── linechart.scss
+│   │   │   │       ├── RadarChartCard/
+│   │   │   │       │   ├── index.jsx
+│   │   │   │       │   └── radarchart.scss
+│   │   │   │       └── RadialBarCard/
+│   │   │   │           ├── index.jsx
+│   │   │   │           └── radialchart.scss
+│   │   │   ├── Header/
+│   │   │   │   └── index.jsx
+│   │   │   ├── MacroNutrimentsCard/
+│   │   │   │   ├── index.jsx
+│   │   │   │   └── macronutrimentscard.scss
 │   │   │   ├── Navbar/
-│   │   │   └── Footer/
-│   │   ├── pages/
+│   │   │   │   ├── index.jsx
+│   │   │   │   └── navbar.scss
+│   │   │   └── Sidebar/
+│   │   │       ├── index.jsx
+│   │   │       └── sidebar.scss
+│   │   ├── Pages/
 │   │   │   └── Profile/
+│   │   │       ├── index.jsx
+│   │   │       └── profile.scss
 │   │   ├── services/
 │   │   │   └── apiService.js
 │   │   ├── style/
 │   │   │   └── global.scss
 │   │   ├── config.js
-│   │   ├── index.jsx
 │   │   └── router.jsx
 │   ├── .gitignore
-│   └── package.json
+│   ├── callAPI.rest
+│   ├── eslint.config.js
+│   ├── frontend.iml
+│   ├── index.html
+│   ├── jsdoc.json
+│   ├── package.json
+│   ├── vite.config.js
+│   └── yarn.lock
 └── README.md
 ```
 ## Utilisation
@@ -102,6 +147,20 @@ SportSee/
 - Ouvrez votre navigateur et accédez à http://localhost:5173/SportSee.
 - Naviguez vers la page de profil utilisateur en utilisant l'URL http://localhost:5173/SportSee/Pages/Profile/user/:id où :id est l'identifiant de l'utilisateur.
 - Consultez les données de l'utilisateur, ses activités, ses performances et ses objectifs.
+
+## Documentation
+
+Une documentation complète du projet est générée avec JSDoc. Elle inclut les détails sur toutes les fonctions, méthodes et modules utilisés dans le code.
+
+### Accès local
+
+Pour consulter la documentation localement :
+
+1. Ouvrez le fichier `index.html` situé dans le dossier `docs/` :
+    ```bash
+    open docs/index.html
+    ```
+2. Naviguez à travers les différentes sections pour explorer les détails du projet.
 
 ## Scripts
 

@@ -1,12 +1,27 @@
+/**
+ * Composant de la barre de navigation.
+ *
+ * Ce composant affiche la barre de navigation avec des liens vers différentes pages de l'application.
+ *
+ * @module Navbar
+ */
+
 import logo from '../../assets/logo.png';
 import './navbar.scss';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Styled from 'styled-components';
 
 const StyledLink = Styled(Link)`
     &:hover {color: #FF0000!important;}
-    `;
+`;
 
+/**
+ * Composant fonctionnel pour la barre de navigation.
+ *
+ * @function
+ * @name Navbar
+ * @returns {JSX.Element} Le composant de la barre de navigation.
+ */
 function Navbar() {
     return (
         <div className="NavbarWrapper">

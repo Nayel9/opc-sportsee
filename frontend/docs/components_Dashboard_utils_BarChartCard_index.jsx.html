@@ -1,4 +1,32 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Dashboard/utils/BarChartCard/index.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Dashboard/utils/BarChartCard/index.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * Composant de la carte de graphique en barres.
  *
  * Ce composant affiche un graphique en barres représentant l'activité quotidienne de l'utilisateur, incluant le poids et les calories brûlées.
@@ -58,23 +86,23 @@ function BarChartCard({ userId }) {
     const ticks = [minWeight, medianWeight, maxWeight];
 
     return (
-        <div className="BarChartWrapper">
-            <div className="BarChartHeader">
-                <h3 className="BarChartTitle">Activité quotidienne</h3>
-                <div className="BarChartLegend">
-                    <div className="BarChartLegendItem">
-                        <RxDotFilled size={24} color="#000000" />
-                        <p>Poids (Kg)</p>
-                    </div>
-                    <div className="BarChartLegendItem">
-                        <RxDotFilled size={24} color="#E60000" />
-                        <p>Calories brûlées (kCal)</p>
-                    </div>
-                </div>
-            </div>
-            <div className="BarChartContent">
-                <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
+        &lt;div className="BarChartWrapper">
+            &lt;div className="BarChartHeader">
+                &lt;h3 className="BarChartTitle">Activité quotidienne&lt;/h3>
+                &lt;div className="BarChartLegend">
+                    &lt;div className="BarChartLegendItem">
+                        &lt;RxDotFilled size={24} color="#000000" />
+                        &lt;p>Poids (Kg)&lt;/p>
+                    &lt;/div>
+                    &lt;div className="BarChartLegendItem">
+                        &lt;RxDotFilled size={24} color="#E60000" />
+                        &lt;p>Calories brûlées (kCal)&lt;/p>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+            &lt;div className="BarChartContent">
+                &lt;ResponsiveContainer width="100%" height="100%">
+                    &lt;BarChart
                         width={500}
                         height={300}
                         data={sessions}
@@ -86,14 +114,14 @@ function BarChartCard({ userId }) {
                         }}
                         barGap={10}
                     >
-                        <CartesianGrid strokeDasharray="2 2" vertical={false} />
-                        <XAxis
+                        &lt;CartesianGrid strokeDasharray="2 2" vertical={false} />
+                        &lt;XAxis
                             dataKey="name"
                             tickLine={false}
                             axisLine={false}
                             tick={{ fontSize: 12, fill: '#9B9EAC' }}
                         />
-                        <YAxis
+                        &lt;YAxis
                             yAxisId="left"
                             orientation="right"
                             tickLine={false}
@@ -102,8 +130,8 @@ function BarChartCard({ userId }) {
                             tick={{ fontSize: 12, fill: '#9B9EAC' }}
                             ticks={ticks}
                         />
-                        <YAxis yAxisId="right" hide={true} />
-                        <Tooltip
+                        &lt;YAxis yAxisId="right" hide={true} />
+                        &lt;Tooltip
                             formatter={(value, name) => [`${value} ${name === 'Poids' ? 'kg' : 'kCal'}`]}
                             labelFormatter={() => ''}
                             contentStyle={{
@@ -120,25 +148,47 @@ function BarChartCard({ userId }) {
                             }}
                             cursor={{ fill: 'rgba(196, 196, 196, 0.5)' }}
                         />
-                        <Bar
+                        &lt;Bar
                             yAxisId="left"
                             dataKey="Poids"
                             fill="#282D30"
                             barSize={7}
                             radius={[5, 5, 0, 0]}
                         />
-                        <Bar
+                        &lt;Bar
                             yAxisId="right"
                             dataKey="Calories"
                             fill="#E60000"
                             barSize={7}
                             radius={[5, 5, 0, 0]}
                         />
-                    </BarChart>
-                </ResponsiveContainer>
-            </div>
-        </div>
+                    &lt;/BarChart>
+                &lt;/ResponsiveContainer>
+            &lt;/div>
+        &lt;/div>
     );
 }
 
-export default BarChartCard;
+export default BarChartCard;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-ApiService.html">ApiService</a></li><li><a href="module-BarChartCard.html">BarChartCard</a></li><li><a href="module-Config.html">Config</a></li><li><a href="module-Dashboard.html">Dashboard</a></li><li><a href="module-Header.html">Header</a></li><li><a href="module-LineChartCard.html">LineChartCard</a></li><li><a href="module-MacroNutrimentsCard.html">MacroNutrimentsCard</a></li><li><a href="module-Navbar.html">Navbar</a></li><li><a href="module-Profile.html">Profile</a></li><li><a href="module-RadarChartCard.html">RadarChartCard</a></li><li><a href="module-Router.html">Router</a></li><li><a href="module-Sidebar.html">Sidebar</a></li><li><a href="module-SimpleRadialBarChart.html">SimpleRadialBarChart</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Wed Dec 04 2024 16:44:42 GMT+0100 (heure normale d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
