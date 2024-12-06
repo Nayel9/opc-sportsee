@@ -8,7 +8,7 @@
 
 import BarChartCard from "./utils/BarChartCard/index.jsx";
 import './dashboard.scss';
-import MacroNutrimentsCard from "../MacroNutrimentsCard/index.jsx";
+import MacroNutrimentsCard from "./utils/MacroNutrimentsCard/index.jsx";
 import LineChartCard from "./utils/LineChartCard/index.jsx";
 import { useState, useEffect } from "react";
 import apiService from '../../services/apiService';
