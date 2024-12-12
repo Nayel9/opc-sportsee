@@ -1,27 +1,34 @@
-/**
- * Composant de la page de profil.
- *
- * Ce composant affiche la page de profil de l'utilisateur, incluant la barre latérale, l'en-tête et le tableau de bord.
- *
- * @module Profile
- */
-
+import { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import './profile.scss';
 import Sidebar from '../../Components/Sidebar';
 import Header from '../../Components/Header';
 import Dashboard from "../../components/Dashboard/index.jsx";
-import { useParams } from 'react-router-dom';
+import apiService from '../../services/apiService';
 
-/**
- * Composant fonctionnel pour la page de profil.
- *
- * @function
- * @name Profile
- * @returns {JSX.Element} Le composant de la page de profil.
- */
 function Profile() {
     const { id } = useParams();
     const userId = parseInt(id, 10);
+    const navigate = useNavigate();
+    const [dataAvailable, setDataAvailable] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                await apiService.getUserInfosData(userId);
+                setDataAvailable(true);
+            } catch (error) {
+                setDataAvailable(false);
+                navigate('/404');
+            }
+        };
+
+        fetchData();
+    }, [userId, navigate]);
+
+    if (!dataAvailable) {
+        return null;
+    }
 
     return (
         <div className="MainWrapper">

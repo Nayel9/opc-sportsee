@@ -8,6 +8,8 @@
 
 import axios from 'axios';
 import config from '../config';
+import FormattedData from "../FormattedData/index.jsx";
+
 
 const apiService = {
 
@@ -23,12 +25,7 @@ const apiService = {
         const url = config.useMockData ? config.mockDataUrls.userInfos : `${config.apiBaseUrl}/user/${id}`;
         return axios.get(url).then(response => {
             const user = response.data.data;
-            return {
-                firstName: user.userInfos.firstName,
-                lastName: user.userInfos.lastName,
-                age: user.userInfos.age,
-                keyData: user.keyData
-            };
+            return FormattedData.formatUserData(user);
         });
     },
 
@@ -44,12 +41,7 @@ const apiService = {
         const url = config.useMockData ? config.mockDataUrls.goals : `${config.apiBaseUrl}/user/${id}`;
         return axios.get(url).then(response => {
             const userKeyData = response.data.data;
-            return {
-                calorieCount: userKeyData.keyData.calorieCount,
-                proteinCount: userKeyData.keyData.proteinCount,
-                carbohydrateCount: userKeyData.keyData.carbohydrateCount,
-                lipidCount: userKeyData.keyData.lipidCount
-            };
+            return FormattedData.formatKeyData(userKeyData);
         });
     },
 
@@ -65,11 +57,7 @@ const apiService = {
         const url = config.useMockData ? config.mockDataUrls.activity : `${config.apiBaseUrl}/user/${id}/activity`;
         return axios.get(url).then(response => {
             const activity = response.data.data;
-            return activity.sessions.map(session => ({
-                day: session.day,
-                kilogram: session.kilogram,
-                calories: session.calories
-            }));
+            return FormattedData.formatActivityData(activity);
         });
     },
 
@@ -85,10 +73,7 @@ const apiService = {
         const url = config.useMockData ? config.mockDataUrls.averageSessions : `${config.apiBaseUrl}/user/${id}/average-sessions`;
         return axios.get(url).then(response => {
             const averageSessions = response.data.data;
-            return averageSessions.sessions.map(session => ({
-                day: session.day,
-                sessionLength: session.sessionLength
-            }));
+            return FormattedData.formatAverageSessions(averageSessions);
         });
     },
 
@@ -104,22 +89,7 @@ const apiService = {
         const url = config.useMockData ? config.mockDataUrls.performance : `${config.apiBaseUrl}/user/${id}/performance`;
         return axios.get(url).then(response => {
             const performanceData = response.data.data;
-            const kindMapping = {
-                "1": "Cardio",
-                "2": "Energie",
-                "3": "Endurance",
-                "4": "Force",
-                "5": "Vitesse",
-                "6": "Intensité"
-            };
-            const orderedKinds = ['Intensité', 'Vitesse', 'Force', 'Endurance', 'Energie', 'Cardio'];
-            return orderedKinds.map(kind => {
-                const item = performanceData.data.find(item => kindMapping[item.kind] === kind);
-                return {
-                    kind: kind,
-                    value: item.value
-                };
-            });
+            return FormattedData.formatPerformanceData(performanceData);
         });
     },
 

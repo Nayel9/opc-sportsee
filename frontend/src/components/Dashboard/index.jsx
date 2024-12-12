@@ -16,6 +16,7 @@ import RadarChartCard from "./utils/RadarChartCard/index.jsx";
 import SimpleRadialBarChart from "./utils/RadialBarCard/index.jsx";
 import PropTypes from 'prop-types';
 
+
 /**
  * Composant fonctionnel pour le tableau de bord.
  *

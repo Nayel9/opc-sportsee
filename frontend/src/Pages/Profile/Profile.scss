@@ -3,7 +3,8 @@
   flex-direction: row;
   width: 100%;
   max-width: 1440px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   .DashboardWrapper {
     display: flex;
